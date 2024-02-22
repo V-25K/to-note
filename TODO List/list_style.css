@@ -1,0 +1,1186 @@
+/* Import Google Font "Poppins" with specified weights */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+* {
+  /* Set box-sizing property to border-box for all elements */
+  box-sizing: border-box;
+}
+
+body,
+html {
+  /* Set font family to "Poppins", sans-serif */
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  /* Remove margin and padding for all paragraphs and headings */
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  /* Set cursor to pointer for all buttons */
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1415px) {
+  main {
+    display: flex;
+    padding: 8px 0;
+  }
+
+  /* Styling for the left section or the section to add tasks */
+  .add-container {
+    flex: 1;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    margin: 0 1%;
+    padding: 1vh 2.5vw;
+  }
+
+  /* Styling for the project title */
+  .proj-title {
+    position: relative;
+  }
+
+  /* Styling for the todo logo */
+  .todo-logo {
+    position: absolute;
+    height: 8.4vh;
+    top: 9.5vh;
+    left: 9vw;
+  }
+
+  /* Styling for the addTask-area h1 */
+  .add-container h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    border: 3px solid grey;
+    text-align: center;
+  }
+
+  /* Styling for the addTask-area */
+  .addTask-area {
+    margin-top: 18vh;
+  }
+
+  /* Styling for the head section */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+
+  /* Styling for the left-head section */
+  .left-head {
+    display: flex;
+    flex: 4;
+    align-items: center;
+  }
+
+  /* Styling for the left-head svg */
+  .left-head svg {
+    padding-top: 4px;
+    height: 38px;
+    padding-right: 6px;
+  }
+
+  /* Styling for the left-head h3 */
+  .left-head h3 {
+    display: inline-block;
+    font-size: 200%;
+    font-weight: 500;
+  }
+
+  /* Styling for the right-head section */
+  .right-head {
+    flex: 1;
+  }
+
+  /* Styling for the add-btn */
+  .add-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin-left: 30px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* Styling for the add-btn img */
+  .add-btn img {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    background-color: transparent;
+  }
+
+  /* Styling for the task-info section */
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 40px 0 10px 0;
+  }
+
+  /* Styling for the task-info input */
+  .task-info input {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 0 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 24px;
+    background-color: #c4c1c1;
+    border: none;
+  }
+
+  /* Styling for the input placeholder */
+  input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+  /* Styling for the dateInput */
+  #js-dateInput::-webkit-calendar-picker-indicator {
+    padding-right: 18px;
+  }
+
+  /* Styling for the color-container */
+  .color-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-right: 8px;
+  }
+
+  /* Styling for the color-btn */
+  .color-btn {
+    height: 40px;
+    width: 150px;
+    padding: 0;
+    border-radius: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Styling for the clearBtn-container */
+  .clearBtn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Styling for the clear-btn */
+  #clear-btn {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+
+  /* Styling for the tasks section */
+  .task-area {
+    flex: 2;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    margin: 0 1%;
+    padding: 26px 30px;
+  }
+
+  /* Styling for the task-area h1 */
+  .task-area h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  /* Styling for the tasks-container */
+  .tasks-container {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    gap: 2.5vh;
+    margin: 20px 0;
+  }
+
+  /* Styling for the tasks */
+  .tasks {
+    position: relative;
+    border-radius: 24px;
+    padding: 18px;
+    margin: 4px 0;
+  }
+
+  /* Styling for the tasks h3 */
+  .tasks h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 70%;
+    height: 36%;
+    margin-bottom: 6px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  /* Styling for the tasks p */
+  .tasks .date-text {
+    width: 80%;
+    height: auto;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks .info-text {
+    width: 95%;
+    height: 15.5vh;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  /* Styling for the del-btn */
+  .del-btn {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    padding: 3px 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 9%;
+    right: 7%;
+  }
+
+  .del-btn:hover {
+    background-color: tomato;
+    border-radius: 50%;
+  }
+
+  /* Styling for the del-btn img */
+  .del-btn img {
+    width: 70%;
+    margin-top: 2px;
+  }
+
+  .add-btn-error {
+    background-color: tomato;
+  }
+
+  .add-btn-success {
+    background-color: lightgreen;
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* Styling for the check-btn */
+  #check-btn {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    padding: 3px 0;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20%;
+    top: 24%;
+    right: 7.5%;
+  }
+
+  /* Styling for the check-btn img  */
+  #check-btn img {
+    height: 100%;
+  }
+}
+/* ==============================Desktop Small screen Version=======================================
+================================================================================================= */
+
+@media screen and (min-width: 1027px) and (max-width: 1414px) {
+  main {
+    padding: 8px 0;
+    display: flex;
+  }
+
+  /* Styling for the left section or the section to add tasks */
+  .add-container {
+    flex: 1;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    padding: 1vh 2vw;
+  }
+
+  /* Styling for the project title */
+  .proj-title {
+    position: relative;
+  }
+
+  /* Styling for the todo logo */
+  .todo-logo {
+    position: absolute;
+    height: 7.4vh;
+    top: 8.5vh;
+    left: 10vw;
+  }
+
+  /* Styling for the addTask-area h1 */
+  .add-container h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    border: 3px solid grey;
+    text-align: center;
+  }
+
+  /* Styling for the addTask-area */
+  .addTask-area {
+    margin-top: 12vh;
+  }
+
+  /* Styling for the head section */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+
+  /* Styling for the left-head section */
+  .left-head {
+    display: flex;
+    flex: 4;
+    align-items: center;
+  }
+
+  /* Styling for the left-head svg */
+  .left-head svg {
+    padding-top: 4px;
+    height: 38px;
+    padding-right: 6px;
+  }
+
+  /* Styling for the left-head h3 */
+  .left-head h3 {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  /* Styling for the right-head section */
+  .right-head {
+    flex: 1;
+  }
+
+  /* Styling for the add-btn */
+  .add-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin-left: 30px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  /* Styling for the add-btn img */
+  .add-btn img {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    background-color: transparent;
+  }
+
+  /* Styling for the task-info section */
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 40px 0 10px 0;
+  }
+
+  /* Styling for the task-info input */
+  .task-info input {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 0 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 24px;
+    background-color: #c4c1c1;
+    border: none;
+  }
+
+  /* Styling for the input placeholder */
+  input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+  /* Styling for the dateInput */
+  #js-dateInput::-webkit-calendar-picker-indicator {
+    padding-right: 18px;
+  }
+
+  /* Styling for the color-container */
+  .color-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-right: 8px;
+  }
+
+  /* Styling for the color-btn */
+  .color-btn {
+    height: 40px;
+    width: 8vw;
+    padding: 0;
+    border-radius: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Styling for the clearBtn-container */
+  .clearBtn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Styling for the clear-btn */
+  #clear-btn {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+
+  /* Styling for the tasks section */
+  .task-area {
+    flex: 2;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    margin: 0px 1%;
+    padding: 26px 18px;
+  }
+
+  /* Styling for the task-area h1 */
+  .task-area h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  /* Styling for the tasks-container */
+  .tasks-container {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    gap: 2.5vh;
+    margin: 20px 0;
+  }
+
+  /* Styling for the tasks */
+  .tasks {
+    position: relative;
+    border-radius: 24px;
+    padding: 18px;
+    margin: 4px 0;
+  }
+
+  /* Styling for the tasks h3 */
+  .tasks h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 70%;
+    height: 36%;
+    margin-bottom: 6px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks p {
+    font-size: 0.85rem;
+  }
+
+  /* Styling for the tasks p */
+  .tasks .date-text {
+    width: 80%;
+    height: auto;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks .info-text {
+    width: 95%;
+    height: 15.5vh;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  /* Styling for the del-btn */
+  .del-btn {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    padding: 4px 2px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 7%;
+    right: 7%;
+  }
+
+  .del-btn:hover {
+    background-color: tomato;
+    border-radius: 50%;
+  }
+
+  /* Styling for the del-btn img */
+  .del-btn img {
+    width: 60%;
+    margin-top: 2px;
+  }
+
+  .add-btn-error {
+    background-color: tomato;
+  }
+
+  .add-btn-success {
+    background-color: lightgreen;
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* Styling for the check-btn */
+  #check-btn {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    padding: 3px 0;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20%;
+    top: 19%;
+    right: 8.5%;
+  }
+
+  /* Styling for the check-btn img  */
+  #check-btn img {
+    height: 100%;
+  }
+}
+
+/* ========================================I-Pad VERSION=========================================
+================================================================================================ */
+
+@media screen and (min-width: 600px) and (max-width: 1027px) {
+  /* Styling for the left section or the section to add tasks */
+  .add-container {
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    padding: 1vh 2vw;
+    margin-bottom: 20px;
+  }
+
+  /* Styling for the project title */
+  .proj-title {
+    position: relative;
+    text-align: center;
+  }
+
+  /* Styling for the todo logo */
+  .todo-logo {
+    position: absolute;
+    height: 6.4vh;
+    top: 100.5px;
+    left: 47%;
+  }
+
+  /* Styling for the addTask-area h1 */
+  .add-container h1 {
+    font-size: 4.8rem;
+    font-weight: 700;
+    border: 4px solid grey;
+    text-align: center;
+    display: inline-block;
+    padding: 0 4vw;
+  }
+
+  /* Styling for the addTask-area */
+  .addTask-area {
+    width: 60vw;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Styling for the head section */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+
+  /* Styling for the left-head section */
+  .left-head {
+    display: flex;
+    flex: 4;
+    align-items: center;
+  }
+
+  /* Styling for the left-head svg */
+  .left-head svg {
+    padding-top: 4px;
+    height: 38px;
+    padding-right: 6px;
+  }
+
+  /* Styling for the left-head h3 */
+  .left-head h3 {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  /* Styling for the right-head section */
+  .right-head {
+    flex: 1;
+  }
+
+  /* Styling for the add-btn */
+  .add-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin-left: 75px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  /* Styling for the add-btn img */
+  .add-btn img {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    background-color: transparent;
+  }
+
+  /* Styling for the task-info section */
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    padding: 20px 0 10px 0;
+  }
+
+  /* Styling for the task-info input */
+  .task-info input {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 0 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 24px;
+    background-color: #c4c1c1;
+    border: none;
+  }
+
+  /* Styling for the input placeholder */
+  input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+  /* Styling for the dateInput */
+  #js-dateInput::-webkit-calendar-picker-indicator {
+    padding-right: 18px;
+  }
+
+  /* Styling for the color-container */
+  .color-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 8px;
+  }
+
+  /* Styling for the color-btn */
+  .color-btn {
+    height: 40px;
+    width: 14vw;
+    padding: 0;
+    border-radius: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Styling for the clearBtn-container */
+  .clearBtn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  /* Styling for the clear-btn */
+  #clear-btn {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+
+  /* Styling for the tasks section */
+  .task-area {
+    flex: 2;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    margin: 0px 1%;
+    padding: 26px 18px;
+  }
+
+  /* Styling for the task-area h1 */
+  .task-area h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  /* Styling for the tasks-container */
+  .tasks-container {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw;
+    gap: 2.5vh;
+    margin: 20px 0;
+    padding: 0 7vw;
+  }
+
+  /* Styling for the tasks */
+  .tasks {
+    position: relative;
+    border-radius: 24px;
+    padding: 18px;
+    margin: 4px 0;
+  }
+
+  /* Styling for the tasks h3 */
+  .tasks h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 70%;
+    height: 36%;
+    margin-bottom: 6px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks p {
+    font-size: 1rem;
+  }
+
+  /* Styling for the tasks p */
+  .tasks .date-text {
+    width: 80%;
+    height: auto;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks .info-text {
+    width: 95%;
+    height: 8vh;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  /* Styling for the del-btn */
+  .del-btn {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    padding: 6px 4px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 15px;
+    right: 7%;
+  }
+
+  .del-btn:hover {
+    background-color: tomato;
+    border-radius: 50%;
+  }
+
+  /* Styling for the del-btn img */
+  .del-btn img {
+    width: 60%;
+    margin-top: 2px;
+  }
+
+  .add-btn-error {
+    background-color: tomato;
+  }
+
+  .add-btn-success {
+    background-color: lightgreen;
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  /* Styling for the check-btn */
+  #check-btn {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    padding: 3px 0;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20%;
+    top: 44px;
+    right: 9.5%;
+  }
+
+  /* Styling for the check-btn img  */
+  #check-btn img {
+    height: 100%;
+  }
+}
+
+/* ========================================MOBILE VERSION=========================================
+================================================================================================ */
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+  /* Styling for the left section or the section to add tasks */
+  .add-container {
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    padding: 1vh 2vw;
+    margin-bottom: 10px;
+  }
+
+  /* Styling for the project title */
+  .proj-title {
+    position: relative;
+    text-align: center;
+  }
+
+  /* Styling for the todo logo */
+  .todo-logo {
+    position: absolute;
+    height: 34.4px;
+    top: 58px;
+    left: 45%;
+  }
+
+  /* Styling for the addTask-area h1 */
+  .add-container h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    border: 4px solid grey;
+    text-align: center;
+    display: inline-block;
+    padding: 0 4vw;
+  }
+
+  /* Styling for the addTask-area */
+  .addTask-area {
+    width: 70vw;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Styling for the head section */
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Styling for the left-head section */
+  .left-head {
+    display: flex;
+    flex: 4;
+    align-items: center;
+  }
+
+  /* Styling for the left-head svg */
+  .left-head svg {
+    padding-top: 4px;
+    height: 22px;
+    padding-right: 6px;
+  }
+
+  /* Styling for the left-head h3 */
+  .left-head h3 {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* Styling for the right-head section */
+  .right-head {
+    flex: 1;
+  }
+
+  /* Styling for the add-btn */
+  .add-btn {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin-left: 75px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  /* Styling for the add-btn img */
+  .add-btn img {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
+    background-color: transparent;
+  }
+
+  /* Styling for the task-info section */
+  .task-info {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0 2px 0;
+  }
+
+  /* Styling for the task-info input */
+  .task-info input {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 7px 0 7px 10px;
+    margin-bottom: 10px;
+    border-radius: 24px;
+    background-color: #c4c1c1;
+    border: none;
+  }
+
+  /* Styling for the input placeholder */
+  input::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
+  /* Styling for the dateInput */
+  #js-dateInput::-webkit-calendar-picker-indicator {
+    padding-right: 18px;
+  }
+
+  /* Styling for the color-container */
+  .color-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-right: 8px;
+  }
+
+  /* Styling for the color-btn */
+  .color-btn {
+    height: 32px;
+    width: 30vw;
+    padding: 0;
+    border-radius: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  label {
+    font-size: 0.6rem;
+  }
+
+  /* Styling for the clearBtn-container */
+  .clearBtn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  /* Styling for the clear-btn */
+  #clear-btn {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+
+  /* Styling for the tasks section */
+  .task-area {
+    flex: 2;
+    background-color: #e3e3e39e;
+    border-radius: 24px;
+    margin: 0px 1%;
+    padding: 6px 8px;
+  }
+
+  /* Styling for the task-area h1 */
+  .task-area h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  /* Styling for the tasks-container */
+  .tasks-container {
+    display: grid;
+    grid-template-columns: 70vw;
+    gap: 2.5vh;
+    margin: 6px 0;
+    padding: 0 13vw;
+  }
+
+  /* Styling for the tasks */
+  .tasks {
+    position: relative;
+    border-radius: 24px;
+    padding: 18px;
+    margin: 4px auto;
+    min-width: 65vw;
+  }
+
+  /* Styling for the tasks h3 */
+  .tasks h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 70%;
+    height: 36%;
+    margin-bottom: 6px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks p {
+    font-size: 1rem;
+  }
+
+  /* Styling for the tasks p */
+  .tasks .date-text {
+    width: 80%;
+    height: auto;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  .tasks .info-text {
+    width: 95%;
+    height: 8vh;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+
+  /* Styling for the del-btn */
+  .del-btn {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    padding: 6px 4px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 15px;
+    right: 7%;
+  }
+
+  .del-btn:hover {
+    background-color: tomato;
+    border-radius: 50%;
+  }
+
+  /* Styling for the del-btn img */
+  .del-btn img {
+    width: 60%;
+    margin-top: 2px;
+  }
+
+  .add-btn-error {
+    background-color: tomato;
+  }
+
+  .add-btn-success {
+    background-color: lightgreen;
+  }
+
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  /* Styling for the check-btn */
+  #check-btn {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    padding: 3px 0;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20%;
+    top: 44px;
+    right: 9.5%;
+  }
+
+  /* Styling for the check-btn img  */
+  .checkBtn-img{
+    height: 100%;
+  }  
+}
